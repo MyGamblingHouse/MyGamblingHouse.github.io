@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    width: 800px;
+    height: 600px;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#casino-floor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('imgs/floor_tile.png');
+    background-size: repeat;
+    opacity: 0.6;
+}
+
+.game {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFD700;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.machine {
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(145deg, #8B4513, #A0522D);
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.machine::before {
+    content: '🎰';
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 140px;
+    height: 100px;
+    background: linear-gradient(145deg, #006400, #008000);
+    border-radius: 70px 70px 10px 10px;
+    border: 5px solid #8B4513;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.table::before {
+    content: '';
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.craps::before { content: '🎲'; }
+.roulette::before { content: '🎡'; }
+.blackjack::before { content: '♠️'; }
+.poker::before { content: '♣️'; }
+
+#player {
+    width: 30px;
+    height: 30px;
+    background-color: #FFD700;
+    position: absolute;
+    left: 385px;
+    top: 285px;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.table.poker, .table.roulette {
+    width: 128px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    border-radius: 0;
+}
+
+.table.poker {
+    background-image: url('imgs/poker_table.png');
+}
+
+.table.roulette {
+    background-image: url('imgs/roulette_table.png');
+    width: 128px;  /* Adjust if needed to match the roulette image aspect ratio */
+    height: 100px; /* Adjust if needed to match the roulette image aspect ratio */
+}
+
+.table.poker::before, .table.roulette::before {
+    content: none;
+}

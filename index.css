@@ -1,0 +1,203 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-image: url('casino-pattern.png'), radial-gradient(circle, #1a1a1a, #0a0a0a);
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to right, #8B0000, #800000);
+    color: #FFD700;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(255, 215, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before, header::after {
+    content: '♠️';
+    font-size: 5em;
+    position: absolute;
+    opacity: 0.1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header::before {
+    left: 20px;
+}
+
+header::after {
+    right: 20px;
+    content: '♣️';
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+button {
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    font-family: 'Georgia', serif;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+button:hover::after {
+    left: 100%;
+    top: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+li {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a); /* Subtle gradient for depth */
+    margin: 10px 0;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    flex-basis: calc(33.333% - 20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+li:before {
+    content: '♠️'; /* Casino suit symbol */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    opacity: 0.2;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(to right, #8B0000, #800000);
+    color: #FFD700;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 15px rgba(255, 215, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        45deg,
+        #FFD700,
+        #FFD700 10px,
+        #8B0000 10px,
+        #8B0000 20px
+    );
+    opacity: 0.3;
+}
+
+/* Add some casino-themed decorative elements */
+.dice {
+    position: fixed;
+    font-size: 2em;
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 5s ease-in-out infinite;
+}
+
+.dice:nth-child(1) { top: 10%; left: 5%; }
+.dice:nth-child(2) { top: 30%; right: 8%; }
+.dice:nth-child(3) { bottom: 15%; left: 7%; }
+
+.casino-decoration {
+    position: absolute;
+    font-size: 3em;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+#decoration-1 { top: 10%; left: 5%; content: '♥️'; }
+#decoration-2 { top: 20%; right: 8%; content: '♦️'; }
+#decoration-3 { bottom: 15%; left: 7%; content: '🃏'; }
+#decoration-4 { bottom: 25%; right: 6%; content: '🎰'; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
